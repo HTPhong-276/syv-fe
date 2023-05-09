@@ -1,0 +1,96 @@
+$primary-color: #6d00cc;
+$error-color: #bf0d00;
+
+html {
+    background-color: #f0f0f0;
+
+}
+
+.logo {
+    font-family: 'Darumadrop One';
+    font-size: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.horizon-break {
+    height: 1px;
+    width: 90%;
+    background-color: #6d00cc;
+    box-shadow: 0px 2px 2.5px $primary-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.welcome {
+    margin: 0;
+
+
+    span {
+        transition: color 0.5s ease-in-out;
+        font-family: 'Darumadrop One';
+
+        &:hover {
+            color: #ae53fc;
+        }
+    }
+}
+
+.auth {
+    &-container {
+        color: $primary-color;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        margin: 30px auto;
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+        border: solid 2px $primary-color;
+        box-shadow: 2.5px 5px #6d00cc;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        transition: all 0.25s ease-out;
+    }
+
+    &-container:hover {
+        box-shadow: 5px 10px #6d00cc;
+    }
+}
+
+.btn {
+    width: 100px;
+    padding: 2.5px 10px;
+    font-family: 'Darumadrop One';
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &-solid {
+        @extend .btn;
+        background-color: $primary-color;
+        color: #f0f0f0;
+        border: none;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: #ae53fc;
+        }
+    }
+
+    &-change-auth {
+        padding: 1.5px 2.5px;
+        background-color: transparent;
+        border-radius: 10px;
+        border-color: $primary-color;
+        color: $primary-color;
+        margin-left: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $primary-color;
+            color: #f0f0f0;
+        }
+    }
+}

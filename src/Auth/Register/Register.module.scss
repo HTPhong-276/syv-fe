@@ -1,0 +1,97 @@
+$primary-color: #6d00cc;
+$error-color: #bf0d00;
+
+html {
+    background-color: #f0f0f0;
+
+}
+
+.logo {
+    font-family: 'Darumadrop One';
+    font-size: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+.horizon-break {
+    height: 1px;
+    width: 90%;
+    background-color: #6d00cc;
+    box-shadow: 0px 2px 2.5px $primary-color;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.welcome {
+    margin: 0;
+
+
+    span {
+        transition: color 0.5s ease-in-out;
+        font-family: 'Darumadrop One';
+
+        &:hover {
+            color: #ae53fc;
+        }
+    }
+}
+
+.register {
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        label {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .input-box {
+            margin: 0 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border: solid 2px $primary-color;
+            padding: 2.5px 5px;
+
+            input {
+                border: none;
+                background-color: transparent;
+                outline: none;
+                font-size: 15px;
+                width: 100%;
+            }
+        }
+
+        .error {
+            color: $error-color;
+            font-size: 12px;
+            margin-left: 10px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.btn {
+    width: 100px;
+    padding: 2.5px 10px;
+    font-family: 'Darumadrop One';
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &-solid {
+        @extend .btn;
+        background-color: $primary-color;
+        color: #f0f0f0;
+        border: none;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: #ae53fc;
+        }
+    }
+}
