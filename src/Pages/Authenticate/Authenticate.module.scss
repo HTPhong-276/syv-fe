@@ -3,7 +3,6 @@ $error-color: #bf0d00;
 
 html {
     background-color: #f0f0f0;
-
 }
 
 .logo {
@@ -34,6 +33,18 @@ html {
             color: #ae53fc;
         }
     }
+}
+
+.container {
+    background-image: url('../../../public/Images/SYV.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
 }
 
 .auth {

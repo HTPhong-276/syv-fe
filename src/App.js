@@ -7,7 +7,6 @@ import { routes } from "./Config/routes";
 function App() {
   return (
     <Fragment>
-
       <BrowserRouter>
         <Routes>
           {routes.map((route, index) => {
@@ -31,7 +30,6 @@ function App() {
                 }
               />
             );
-
           })}
         </Routes>
       </BrowserRouter>

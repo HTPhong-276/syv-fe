@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import AuthContext from '../../Context/AuthProvider';
 
 function VideoPage() {
 
-    const [loggedUser, setLoggedUser] = useState('');
 
-    useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('loggedUser'));
-        setLoggedUser(user.username);
-    })
+    const { loggedUser } = useContext(AuthContext);
 
     return (
-        <div>This video page is belong to {loggedUser}</div>
+        <div>This video page is belong to {loggedUser.username}</div>
     )
 }
 

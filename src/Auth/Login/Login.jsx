@@ -1,16 +1,20 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useRef, useState, useContext } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../Context/AuthProvider';
 
 const cx = classNames.bind(styles);
 
 function Login() {
 
     const navigate = useNavigate();
+
+    const { Login, loggedUser } = useContext(AuthContext);
+    const [loginErr, setLoginErr] = useState("");
 
     const schema = yup.object({
         username: yup.string()
@@ -28,25 +32,18 @@ function Login() {
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data) => {
-        const userData = JSON.parse(localStorage.getItem(data.username));
-        if (userData) {
-            if (userData.password === data.password) {
-                localStorage.setItem('loggedUser', JSON.stringify({
-                    username: data.username,
-                }));
-                navigate('/video')
-            } else {
-                alert("Username or Password is not matching with our record");
-            }
-        } else {
-            alert("Username or Password is not matching with our record");
+    const loginHandle = async (data) => {
+        try {
+            Login(data);
+            navigate('/video');
+        } catch (err) {
+
         }
     }
 
     return (
         <Fragment>
-            <form className={cx('login-form')} onSubmit={handleSubmit(onSubmit)}>
+            <form className={cx('login-form')} onSubmit={handleSubmit(loginHandle)}>
 
                 <label htmlFor='username'> Username: </label>
                 <div className={cx('input-box')}>

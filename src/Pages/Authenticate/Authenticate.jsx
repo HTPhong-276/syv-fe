@@ -16,21 +16,23 @@ function Authenticate() {
 
     return (
         <Fragment>
-            <div className={cx('auth-container')}>
-                <h1 className={cx('logo')}>SYV</h1>
-                <h3 className={cx('welcome')}>
-                    {isLogin ? 'Share your video with ' : 'Welcome to '}
-                    <span>SYV</span>
-                </h3>
-                <div className={cx('horizon-break')}></div>
-                {isLogin ? <Login /> : <Register />}
-                <p>
-                    {isLogin ? 'New to SYV?' : 'Had an account?'}
-                    <button className={cx('btn-change-auth')} onClick={changeAuthHandle}>
-                        {isLogin ? 'Sign up' : 'Sign in'}
-                    </button>
-                </p>
+            <div className={cx('container')}>
+                <div className={cx('auth-container')}>
+                    <h1 className={cx('logo')}>SYV</h1>
+                    <h3 className={cx('welcome')}>
+                        {isLogin ? 'Share your video with ' : 'Welcome to '}
+                        <span>SYV</span>
+                    </h3>
+                    <div className={cx('horizon-break')}></div>
+                    {isLogin ? <Login /> : <Register />}
+                    <p>
+                        {isLogin ? 'New to SYV?' : 'Had an account?'}
+                        <button className={cx('btn-change-auth')} onClick={changeAuthHandle}>
+                            {isLogin ? 'Sign up' : 'Sign in'}
+                        </button>
+                    </p>
 
+                </div>
             </div>
         </Fragment>
     )
